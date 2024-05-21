@@ -10,10 +10,10 @@ https://ge3pngo0h6.execute-api.eu-west-2.amazonaws.com/prod/api/v1
 
 There are two endpoints created in this work:
 * Health Checker endpoint:
-GET ```https://ge3pngo0h6.execute-api.eu-west-2.amazonaws.com/prod/api/v1```
+** GET ```https://ge3pngo0h6.execute-api.eu-west-2.amazonaws.com/prod/api/v1```
 This will return the endpoint status ('down' or 'OK')
 
-* Image upload endpoint:
+** Image upload endpoint:
 This is the main endpoint for this work, where the image is uploaded to S3 bucket
 POST ```https://ge3pngo0h6.execute-api.eu-west-2.amazonaws.com/prod/api/v1/save```
 It takes the image url in the body of the request, e.g.:
