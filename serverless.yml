@@ -1,0 +1,50 @@
+org: bernoullimukuna21
+app: sessions-image-app
+region: eu-west-2
+service: sessions-image-app
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ${self:region}
+  stage: prod
+
+  environment:
+    BUCKET_NAME: ${self:service}-${sls:stage}-bucket
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+      Resource:
+        - "arn:aws:s3:::${self:service}-${sls:stage}-bucket/*"
+
+resources:
+  Resources:
+    MyS3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:service}-${sls:stage}-bucket
+        
+functions:
+  api:
+    handler: server.handler
+    events:
+      - http:
+          path: /api/v1
+          method: get
+          cors: true
+      - http:
+          path: /api/v1/{proxy+}
+          method: any
+          cors: true
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+    lambdaPort: 4002
+    stage: dev
