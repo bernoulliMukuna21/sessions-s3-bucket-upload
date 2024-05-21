@@ -42,7 +42,7 @@ npm start
 
   - GET ```http://localhost:4000/dev/api/v1``` to return the app status
 
-  - POST ```http://localhost:4000/dev/api/v1/save```
+  - POST ```http://localhost:4000/dev/api/v1/save``` with the body below in the request
     ```console 
     {
       image: 'https://images.unsplash.com/photo-1676535157847-132b0b10898f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
