@@ -10,6 +10,7 @@ https://ge3pngo0h6.execute-api.eu-west-2.amazonaws.com/prod/api/v1
 
 There are two endpoints created in this work:
 * Health Checker endpoint:
+
   GET ```https://ge3pngo0h6.execute-api.eu-west-2.amazonaws.com/prod/api/v1```
   This will return the endpoint status ('down' or 'OK')
 
