@@ -1,13 +1,12 @@
 org: bernoullimukuna21
 app: sessions-image-app
-region: eu-west-2
 service: sessions-image-app
 frameworkVersion: '3'
 
 provider:
   name: aws
   runtime: nodejs18.x
-  region: ${self:region}
+  region: eu-west-2
   stage: prod
 
   environment:
